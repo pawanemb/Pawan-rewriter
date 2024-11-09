@@ -1,97 +1,29 @@
 {
-    "compilerOptions": {
-      /* Base Options */
-      "target": "es5",
-      "lib": ["dom", "dom.iterable", "esnext"],
-      "allowJs": true,
-      "skipLibCheck": true,
-      "strict": true,
-      "forceConsistentCasingInFileNames": true,
-      "noEmit": true,
-      "incremental": true,
-      "esModuleInterop": true,
-      "module": "esnext",
-      "moduleResolution": "node",
-      "resolveJsonModule": true,
-      "isolatedModules": true,
-      "jsx": "preserve",
-  
-      /* Path Aliases */
-      "baseUrl": ".",
-      "paths": {
-        "@/*": ["./*"],
-        "@/components/*": ["components/*"],
-        "@/lib/*": ["lib/*"],
-        "@/styles/*": ["styles/*"],
-        "@/utils/*": ["utils/*"],
-        "@/hooks/*": ["hooks/*"],
-        "@/types/*": ["types/*"],
-        "@/contexts/*": ["contexts/*"],
-        "@/constants/*": ["constants/*"],
-        "@/services/*": ["services/*"],
-        "@/public/*": ["public/*"]
-      },
-  
-      /* Type Checking */
-      "noUnusedLocals": true,
-      "noUnusedParameters": true,
-      "noImplicitReturns": true,
-      "noFallthroughCasesInSwitch": true,
-      "noUncheckedIndexedAccess": true,
-      "noPropertyAccessFromIndexSignature": true,
-      "noImplicitOverride": true,
-  
-      /* Additional Checks */
-      "allowUnreachableCode": false,
-      "allowUnusedLabels": false,
-      "exactOptionalPropertyTypes": true,
-      "noImplicitAny": true,
-      "strictNullChecks": true,
-      "strictFunctionTypes": true,
-      "strictBindCallApply": true,
-      "strictPropertyInitialization": true,
-      "noImplicitThis": true,
-      "useUnknownInCatchVariables": true,
-  
-      /* Module Resolution */
-      "allowSyntheticDefaultImports": true,
-      "preserveSymlinks": true,
-  
-      /* Interop Constraints */
-      "verbatimModuleSyntax": true,
-  
-      /* Language and Environment */
-      "experimentalDecorators": true,
-      "emitDecoratorMetadata": true,
-  
-      /* Completeness */
-      "skipDefaultLibCheck": true
-    },
-    "include": [
-      "next-env.d.ts",
-      "**/*.ts",
-      "**/*.tsx",
-      "**/*.js",
-      "**/*.jsx",
-      "**/*.json",
-      ".next/types/**/*.ts"
-    ],
-    "exclude": [
-      "node_modules",
-      ".next",
-      "out",
-      "build",
-      "dist",
-      "coverage",
-      "**/*.test.ts",
-      "**/*.spec.ts",
-      "**/*.test.tsx",
-      "**/*.spec.tsx",
-      "**/__tests__/**"
-    ],
-    "ts-node": {
-      "compilerOptions": {
-        "module": "CommonJS"
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
       }
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
     }
-  }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
