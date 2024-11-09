@@ -1,14 +1,12 @@
-import { NextApiRequest, NextApiResponse } from 'next'
-import prisma from '@/lib/prisma'
+import type { NextApiRequest, NextApiResponse } from 'next'
 
-export default async function handler(
+type Data = {
+  name: string
+}
+
+export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse<Data>
 ) {
-  try {
-    const users = await prisma.user.findMany()
-    res.status(200).json(users)
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch users' })
-  }
+  res.status(200).json({ name: 'Blog Rewriter API' })
 }
