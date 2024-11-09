@@ -1,34 +1,27 @@
 {
-    "version": 2,
-    "buildCommand": "npm run build",
-    "devCommand": "npm run dev",
-    "installCommand": "npm install",
-    "framework": "nextjs",
-    "env": {
-      "NEXT_PUBLIC_APP_URL": "@next_public_app_url",
-      "NEXT_PUBLIC_APP_ENV": "production",
-      "NEXT_PUBLIC_SEMRUSH_API_KEY": "@next_public_semrush_api_key",
-      "NEXT_PUBLIC_OPENAI_API_KEY": "@next_public_openai_api_key",
-      "NEXT_PUBLIC_GOOGLE_ANALYTICS_ID": "@next_public_google_analytics_id"
-    },
-    "regions": ["iad1"],
-    "headers": [
-      {
-        "source": "/(.*)",
-        "headers": [
-          {
-            "key": "X-Frame-Options",
-            "value": "DENY"
-          },
-          {
-            "key": "X-Content-Type-Options",
-            "value": "nosniff"
-          },
-          {
-            "key": "Referrer-Policy",
-            "value": "strict-origin-when-cross-origin"
-          }
-        ]
-      }
-    ]
-  }
+  "version": 2,
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "regions": ["iad1"],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
+  ]
+}
