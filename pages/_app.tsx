@@ -1,39 +1,22 @@
-import "@/styles/globals.css"
-import type { AppProps } from "next/app"
-import { Inter } from "next/font/google"
-import { Navbar } from "@/components/layout/Navbar"
-import { Footer } from "@/components/layout/Footer"
+import '@/styles/globals.css'
+import type { AppProps } from 'next/app'
+import { Inter } from 'next/font/google'
+import { Navbar } from '@/components/layout/Navbar'
+import { Footer } from '@/components/layout/Footer'
+import { ThemeProvider } from 'next-themes'
 
-// Initialize Inter font
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-})
+const inter = Inter({ subsets: ['latin'] })
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <style jsx global>{`
-        :root {
-          --font-inter: ${inter.style.fontFamily};
-        }
-      `}</style>
-      
-      <div className={`min-h-screen flex flex-col ${inter.variable} font-sans`}>
-        {/* Header/Navigation */}
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <div className={`${inter.className} min-h-screen flex flex-col`}>
         <Navbar />
-
-        {/* Main Content */}
-        <main className="flex-grow">
+        <main className="flex-1">
           <Component {...pageProps} />
         </main>
-
-        {/* Footer */}
         <Footer />
-
-        {/* Toast Container - if you're using react-hot-toast */}
-        {/* <Toaster position="bottom-right" /> */}
       </div>
-    </>
+    </ThemeProvider>
   )
 }
